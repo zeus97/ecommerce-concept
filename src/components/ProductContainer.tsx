@@ -1,47 +1,43 @@
-import React, {useState, useEffect} from 'react'
-import { useParams, useLocation } from 'react-router-dom'
+import React, { useEffect } from 'react'
 import '../styles/ProductContainer.scss'
-import { IProduct } from '../interfaces'
+//get the URL by location hook
+import { useLocation } from 'react-router-dom'
+//Component
 import Product from './Product';
-import { getAllProducts, getElectronicProducts, getJeweleryProducts , getMenClothingsProducts, getWomenClothingsProducts } from '../services';
+//API requests
+import { getAllProducts, getCategory, } from '../services';
+//Redux
+import type { RootState } from '../app/store'
+import { useSelector, useDispatch } from 'react-redux'
+import { setProducts } from '../features/product/productSlice'
 
 function ProductContainer() {
 
-const [products, setProducts] = useState<IProduct[]>([]);
+const products = useSelector((state: RootState) => state.product.value)
+const dispatch = useDispatch()
 
 let location = useLocation();
 
 useEffect(()=>{
     console.log(location.pathname);
-    if (location.pathname == '/electronics'){
-        getElectronicProducts()
-        .then((res)=>{setProducts(res.data)})
-        .catch((error)=>{console.log(error)})
-    } else if(location.pathname == '/jewelery'){
-
-        getJeweleryProducts()
-        .then((res)=>{setProducts(res.data)})
-        .catch((error)=>{console.log(error)})
-    } else if(location.pathname == "/mens-clothing"){
-        getMenClothingsProducts()
-        .then((res)=>{setProducts(res.data)})
-        .catch((error)=>{console.log(error)})
-    } else if (location.pathname == "/womens-clothing"){
-        getWomenClothingsProducts()
-        .then((res)=>{setProducts(res.data)})
-        .catch((error)=>{console.log(error)})
-    } else{
+    if (location.pathname == '/'){
         getAllProducts()
-        .then((res)=>{setProducts(res.data)})
+        .then((res)=>{dispatch(setProducts(res.data))})
         .catch((error)=>{console.log(error)})
-    }
+    } else {
+        getCategory(location.pathname)
+        .then((res)=>{dispatch(setProducts(res.data))})
+        .catch((error)=>{console.log(error)})
+    } 
 
     
 },[location.pathname])
 
   return (
     <div className='container product-container'>
-        {
+        { products.length < 1 ?
+        <h1>Not products found.</h1>
+        :
             products.map((p,i)=>{
                 return (
                     <Product
