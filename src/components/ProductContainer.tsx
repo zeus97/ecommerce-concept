@@ -42,10 +42,12 @@ useEffect(()=>{
                 return (
                     <Product
                     key={i}
+                    id={p.id}
                     image={p.image}
                     title={p.title}
                     description={p.description}
-                    price={p.price} />
+                    price={p.price}
+                    category={p.category} />
                 )
             })
         }

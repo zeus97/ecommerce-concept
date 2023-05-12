@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 //Pages
 import HomePage from './pages/HomePage'
 import NotFoundPage from './pages/NotFoundPage'
+import CartPage from './pages/CartPage'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path='/jewelery' element={<HomePage />} />
           <Route path='/mens-clothing' element={<HomePage />} />
           <Route path='/womens-clothing' element={<HomePage />} />
+          <Route path='/cart' element={<CartPage />} />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>

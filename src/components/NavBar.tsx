@@ -1,8 +1,14 @@
 import React, {useState} from 'react';
 import '../styles/Navbar.scss';
 import { useNavigate } from 'react-router-dom'
+//Redux
+import { useSelector } from 'react-redux'
+import { RootState } from '../app/store';
 
 export default function NavBar() {
+
+    const cartItems = useSelector((state: RootState)=> state.cart.value)
+    const cartCount = cartItems.length;
 
     const [menu, setMenu] = useState<boolean>(false);
     const navigate = useNavigate();
@@ -24,8 +30,8 @@ export default function NavBar() {
             <div className='cart-box'>
             <i className="bi bi-list burger"
             onClick={handleMenu}></i>
-                <i className="bi bi-cart">
-                    <div className='cart-counter'>1</div>
+                <i className="bi bi-cart" onClick={()=>{navigate('/cart')}}>
+                    <div className='cart-counter'>{cartCount}</div>
                 </i>
                 
             </div>

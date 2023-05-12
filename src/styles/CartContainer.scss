@@ -1,0 +1,16 @@
+.cart-container-box{
+    background-color: #fff;
+    min-height: 200px;
+    margin-top: 10px;
+    border-radius: 5px;
+
+    .cart-container{
+
+        .cart-items{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            border-right: 2px solid #000;
+        }
+    }
+}
