@@ -12,8 +12,10 @@ export default function CartContainer() {
   return (
     <div className='container cart-container-box'>
         <div className='row cart-container'>
-            <div className='col-6 cart-items'>
-            {
+            <div className='col-md-6 col-sm-12 cart-items'>
+            {cartItems.length < 1 ?
+            <h2>You don't have items on the cart</h2>
+            :
                 cartItems.map((p)=>{
                     return (
                         <CartItem
@@ -28,7 +30,7 @@ export default function CartContainer() {
                 })
             }
             </div>
-            <div className='col-6 cart-info'></div>
+            <div className='col-md-6 col-sm-12 cart-info'></div>
         </div>
 
     </div>

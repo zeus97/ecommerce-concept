@@ -48,21 +48,30 @@ header{
                 align-self: center;
                 font-size: 3rem;
                 cursor: pointer;
+                width: 80px;
+        
                 .cart-counter{
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     position: absolute;
                     top: 35.5%;
-                    left: 34%;
-                    width: 20px;
-                    height: 20px;
+                    left: 40%;
+                    width: 18px;
+                    height: 18px;
                     background-color: #b8b8b8;
                     color: #fff;
                     border-radius: 50%;
                     font-size: 12px;
                 }
         }
+            i:hover{
+                background-color: #b8b8b8;
+            }
+            i:hover .cart-counter{
+                background-color: #fff;
+                color: #b8b8b8;
+            }
             .burger{
                 display: none;
             }
@@ -119,4 +128,26 @@ header{
     
     
 
+}
+
+@media screen and (max-width:768px){
+    header{
+        nav{
+            h1{
+                font-size: 1.8rem;
+            }
+        }
+
+        }
+}
+
+@media screen and (max-width:400px){
+    header{
+        nav{
+            h1{
+                font-size: 1rem;
+            }
+        }
+
+        }
 }

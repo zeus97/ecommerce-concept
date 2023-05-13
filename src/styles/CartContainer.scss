@@ -1,16 +1,34 @@
 .cart-container-box{
     background-color: #fff;
-    min-height: 200px;
+    height: 80vh;
     margin-top: 10px;
     border-radius: 5px;
 
     .cart-container{
-
+        height: 100%;
+        
         .cart-items{
             display: flex;
+            overflow-y: auto;
             align-items: center;
             flex-direction: column;
-            border-right: 2px solid #000;
+            height: 100%;
+            border-right: 5px solid #b8b8b8;
         }
+    }
+}
+
+@media screen and (max-width:768px){
+    .cart-container-box{
+        .cart-container{
+            .cart-items{
+                border: none;
+                height: 50%;
+                border-bottom: 5px solid #b8b8b8;
+            }
+
+        }
+
+
     }
 }

@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import { addItem } from '../features/cart/cartSlice'
 
 
+
 interface Props {
     id:number,
     image:string,
@@ -17,26 +18,31 @@ interface Props {
 
 export default function Product({id,image,title,price,description,category}:Props) {
 
-    const [disabledButton, setDisabledButton] = useState<boolean>(false);
+    
+    const [disabledButton, setDisabledButton] = useState(false)
+
 
     if(description.length > 500){
         description = '';
     };
 
-    const dispatch = useDispatch()
+    const item = {
+        id:id,
+        image:image,
+        title:title,
+        price:price,
+        description:description,
+        category:category,
+        quantity: 1
+    };
+
+    const dispatch = useDispatch();
+         
+      
 
     const addItemCart = ()=>{
-        const item = {
-            id:id,
-            image:image,
-            title:title,
-            price:price,
-            description:description,
-            category:category,
-            quantity: 1
-        };
         dispatch(addItem(item));
-        setDisabledButton(true);
+        setDisabledButton(true)
     }
 
   return (

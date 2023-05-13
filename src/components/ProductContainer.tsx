@@ -13,7 +13,14 @@ import { setProducts } from '../features/product/productSlice'
 
 function ProductContainer() {
 
-const products = useSelector((state: RootState) => state.product.value)
+const products = useSelector((state: RootState) => state.product.value);
+const cartItems = useSelector((state: RootState)=>state.cart.value);
+let disabled = false;
+if(cartItems.length > 1){
+    for(let i=0; i >= cartItems.length; i++){
+
+    }
+}
 const dispatch = useDispatch()
 
 let location = useLocation();
@@ -40,6 +47,7 @@ useEffect(()=>{
         :
             products.map((p,i)=>{
                 return (
+                    
                     <Product
                     key={i}
                     id={p.id}
