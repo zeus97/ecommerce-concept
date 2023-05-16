@@ -35,10 +35,11 @@ export const cartSlice = createSlice({
     },
     decrement: (state, action: PayloadAction<number>)=>{
       const index = state.value.findIndex((item)=> item.id === action.payload);
-      if (state.value[index].quantity > 0){
+      if (state.value[index].quantity > 1){
         state.value[index].quantity = state.value[index].quantity - 1;
       }
     },
+
   },
 })
 

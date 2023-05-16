@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 const baseUrl = 'https://fakestoreapi.com';
 
 export const getAllProducts = async ()=>{
@@ -15,4 +16,6 @@ export const getCategory  = async (category:string)=>{
     }
     return axios.get(baseUrl + `/products/category${category}`)
 }
+
+
 

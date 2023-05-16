@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState,useEffect } from 'react'
 import '../styles/ProductContainer.scss'
 //get the URL by location hook
 import { useLocation } from 'react-router-dom'
@@ -14,16 +14,16 @@ import { setProducts } from '../features/product/productSlice'
 function ProductContainer() {
 
 const products = useSelector((state: RootState) => state.product.value);
-const cartItems = useSelector((state: RootState)=>state.cart.value);
-let disabled = false;
-if(cartItems.length > 1){
-    for(let i=0; i >= cartItems.length; i++){
-
-    }
-}
 const dispatch = useDispatch()
 
+const [modal, setModal] = useState<boolean>(false);
+
 let location = useLocation();
+
+//Modal function
+const hanldeModal = ()=>{
+    setModal(true);
+}
 
 useEffect(()=>{
     console.log(location.pathname);
@@ -41,26 +41,42 @@ useEffect(()=>{
 },[location.pathname])
 
   return (
-    <div className='container product-container'>
-        { products.length < 1 ?
-        <h1>Not products found.</h1>
-        :
-            products.map((p,i)=>{
-                return (
-                    
-                    <Product
-                    key={i}
-                    id={p.id}
-                    image={p.image}
-                    title={p.title}
-                    description={p.description}
-                    price={p.price}
-                    category={p.category} />
-                )
-            })
-        }
+    <>
+        <div className='container product-container'>
+            { products.length < 1 ?
+            <h1>Not products found.</h1>
+            :
+                products.map((p,i)=>{
+                    return (
+                        
+                        <Product
+                        key={i}
+                        id={p.id}
+                        image={p.image}
+                        title={p.title}
+                        description={p.description}
+                        price={p.price}
+                        category={p.category}
+                        modal={hanldeModal} />
+                    )
+                })
+            }
 
-    </div>
+        </div>
+    
+        { modal &&
+            <div className={modal ? 'product-modal fade-modal' : 'product-modal '}
+            onClick={()=>{setModal(false)}}>
+                <div>
+                    <i className="bi bi-x" onClick={()=>{setModal(false)}}></i>
+                    <div className="alert alert-success" role="alert">
+                        New item added to the cart!
+                    </div>
+                </div>
+            </div>
+        }
+    
+    </>
   )
 }
 

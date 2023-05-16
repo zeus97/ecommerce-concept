@@ -13,10 +13,11 @@ interface Props {
     title:string,
     price:number,
     description:string,
-    category:string
+    category:string,
+    modal: () => void;
 }
 
-export default function Product({id,image,title,price,description,category}:Props) {
+export default function Product({id,image,title,price,description,category, modal}:Props) {
 
     
     const [disabledButton, setDisabledButton] = useState(false)
@@ -42,8 +43,9 @@ export default function Product({id,image,title,price,description,category}:Prop
 
     const addItemCart = ()=>{
         dispatch(addItem(item));
-        setDisabledButton(true)
-    }
+        setDisabledButton(true);
+        modal();
+    };
 
   return (
     <div className='product'>
