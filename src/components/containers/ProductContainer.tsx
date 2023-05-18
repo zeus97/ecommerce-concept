@@ -1,15 +1,19 @@
 import React, { useState,useEffect } from 'react'
-import '../styles/ProductContainer.scss'
+import '../../styles/ProductContainer.scss'
 //get the URL by location hook
 import { useLocation } from 'react-router-dom'
 //Component
-import Product from './Product';
+import ModalItem from '../pures/ModalItem';
+import Product from '../pures/Product';
 //API requests
-import { getAllProducts, getCategory, } from '../services';
+import { getAllProducts, getCategory, } from '../../services';
 //Redux
-import type { RootState } from '../app/store'
+import type { RootState } from '../../app/store'
 import { useSelector, useDispatch } from 'react-redux'
-import { setProducts } from '../features/product/productSlice'
+import { setProducts } from '../../features/product/productSlice'
+//Interface
+import { IProduct } from '../../interfaces';
+
 
 function ProductContainer() {
 
@@ -17,12 +21,32 @@ const products = useSelector((state: RootState) => state.product.value);
 const dispatch = useDispatch()
 
 const [modal, setModal] = useState<boolean>(false);
+const [modalItem, setModalItem] = useState<boolean>(false);
+const [modalInfo, setModalInfo] = useState<IProduct>({id:0,title:'',price:0,category:'',description:'',image:''})
 
 let location = useLocation();
 
 //Modal function
 const hanldeModal = ()=>{
     setModal(true);
+}
+
+//Modal Item functions
+const handleModalItem = (id:number,price:number,category:string,img:string,title:string,description:string) =>{
+    let info = {
+        id,
+        title,
+        price,
+        category,
+        description,
+        image:img
+    }
+    setModalInfo(info);
+    setModalItem(true);
+};
+
+const closeModalItem = ()=>{
+    setModalItem(false);
 }
 
 useEffect(()=>{
@@ -57,7 +81,8 @@ useEffect(()=>{
                         description={p.description}
                         price={p.price}
                         category={p.category}
-                        modal={hanldeModal} />
+                        modal={hanldeModal}
+                        itemModal={handleModalItem} />
                     )
                 })
             }
@@ -70,11 +95,22 @@ useEffect(()=>{
                 <div>
                     <i className="bi bi-x" onClick={()=>{setModal(false)}}></i>
                     <div className="alert alert-success" role="alert">
-                        New item added to the cart!
+                        Item added to the cart!
                     </div>
                 </div>
             </div>
         }
+        {modalItem &&
+            <ModalItem
+            id={modalInfo.id}
+            price={modalInfo.price}
+            category={modalInfo.category} 
+            img={modalInfo.image}
+            title={modalInfo.title}
+            description={modalInfo.description}
+            closeModal={closeModalItem}
+            modal={hanldeModal}/>
+         }
     
     </>
   )

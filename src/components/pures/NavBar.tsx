@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import '../styles/Navbar.scss';
+import '../../styles/Navbar.scss';
 import { useNavigate } from 'react-router-dom'
 //Redux
 import { useSelector } from 'react-redux'
-import { RootState } from '../app/store';
+import { RootState } from '../../app/store';
 
 export default function NavBar() {
 

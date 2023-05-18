@@ -1,10 +1,10 @@
 import React, {useState,useEffect} from 'react'
-import '../styles/CartContainer.scss'
+import '../../styles/CartContainer.scss'
 
 //Redux
 import { useSelector } from 'react-redux'
-import type { RootState } from '../app/store'
-import CartItem from './CartItem'
+import type { RootState } from '../../app/store'
+import CartItem from '../pures/CartItem'
 
 export default function CartContainer() {
 

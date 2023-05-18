@@ -5,7 +5,7 @@
     padding: 20px;
     margin-top: 20px;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: var(--color-white);
 }
 .product-modal{
     width: 100%;
@@ -17,19 +17,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 20;
 
     div {
         display: flex;
         flex-direction: column;
 
         i {
-            font-size: 40px;
+            font-size: 30px;
             color: #fff;
             align-self: flex-end;
             cursor: pointer;
         }
         i:hover{
-            color: #b8b8b8;
+            color: var(--bg-color);
         }
     }
 }

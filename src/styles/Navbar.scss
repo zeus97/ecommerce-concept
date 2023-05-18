@@ -1,7 +1,7 @@
 header{
     width: 100%;
     height: 70px;
-    background-color: #fff;
+    background-color: var(--color-white);
 
     nav{
         width: 100%;
@@ -34,7 +34,7 @@ header{
                 user-select: none;
             }
             li:hover{
-                background-color: #b8b8b8;
+                color: var(--bg-color);
                 cursor: pointer;
             }
         }
@@ -59,18 +59,18 @@ header{
                     left: 40%;
                     width: 18px;
                     height: 18px;
-                    background-color: #b8b8b8;
-                    color: #fff;
+                    background-color: var(--bg-color);
+                    color: var(--color-white);
                     border-radius: 50%;
                     font-size: 12px;
                 }
         }
             i:hover{
-                background-color: #b8b8b8;
+                color: var(--bg-color);
             }
             i:hover .cart-counter{
-                background-color: #fff;
-                color: #b8b8b8;
+                background-color: #000;
+                color: var(--bg-color);
             }
             .burger{
                 display: none;
@@ -86,13 +86,13 @@ header{
         width: 100%;
         list-style: none;
         margin-top: 70px;
-        background-color: #fff;
+        background-color: var(--color-white);
 
         p{
             padding: 10px;
         }
         p:hover{
-            background-color: #b8b8b8;
+            background-color: var(--bg-color);
             cursor: pointer;
         }
     }

@@ -1,8 +1,8 @@
 import React from 'react'
 //Components
-import NavBar from '../components/NavBar'
-import CartContainer from '../components/CartContainer'
-import Footer from '../components/Footer'
+import NavBar from '../components/pures/NavBar'
+import CartContainer from '../components/containers/CartContainer'
+import Footer from '../components/pures/Footer'
 
 export default function CartPage() {
   return (

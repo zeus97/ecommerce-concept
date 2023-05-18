@@ -1,14 +1,14 @@
 import React from 'react'
-import '../styles/Carousel.scss'
+import '../../styles/Carousel.scss'
 
 //images
-import image1 from '../images/image1.jpg'
-import image2 from '../images/image2.jpg'
-import image3 from '../images/image3.jpg'
+import image1 from '../../images/image1.jpg'
+import image2 from '../../images/image2.jpg'
+import image3 from '../../images/image3.jpg'
 
 function Carousel() {
   return (
-    <div id="carouselExampleAutoplaying" className="carousel slide container mt-2" data-bs-ride="carousel">
+    <div id="carouselExampleAutoplaying" className="carousel slide container-md mt-2" data-bs-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">
       <img src={image1} className="d-block w-100" alt="shoes" height='300' />

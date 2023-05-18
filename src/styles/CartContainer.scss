@@ -1,5 +1,5 @@
 .cart-container-box{
-    background-color: #fff;
+    background-color: var(--color-white);
     height: 80vh;
     margin-top: 10px;
     border-radius: 5px;
@@ -13,15 +13,13 @@
             align-items: center;
             flex-direction: column;
             height: 100%;
-            border-right: 5px solid #b8b8b8;
+            border-right: 5px solid var(--bg-color);
         }
 
         .cart-info{
             padding: 20px;
             height: 100%;
             overflow-y:auto;
-            scroll-snap-align: end;
-
 
             p{
                 text-align: center;
@@ -29,9 +27,12 @@
             }
             .total-c{
                 margin-top: 50px;
+                padding: 5px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.3);
+                border-radius: 5px;
             }
             
             
@@ -39,13 +40,13 @@
     }
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width:767px){
     .cart-container-box{
         .cart-container{
             .cart-items{
                 border: none;
                 height: 50%;
-                border-bottom: 5px solid #b8b8b8;
+                border-bottom: 5px solid var(--bg-color);
             }
 
             .cart-info{
