@@ -2,6 +2,7 @@ header{
     width: 100%;
     height: 70px;
     background-color: var(--color-white);
+    z-index: 10;
 
     nav{
         width: 100%;
@@ -10,7 +11,9 @@ header{
         justify-content: space-between;
         
 
-        h1{
+        .nav-title{
+            text-decoration: none;
+            color: #000;
             text-align: center;
             font-size: 2.5rem;
             align-self: center;
@@ -20,22 +23,38 @@ header{
         }
         ul{
             display: flex;
+            flex: 2;
             list-style: none;
             height: 100%;
             margin-right: 50px;
-            flex: 2;
            
             
-            li{
+            a{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
                 text-align: center;
+                color: #000;
                 height: 100%;
                 flex: 1;
-                line-height: 70px;
+                
                 user-select: none;
+                div{
+                    height: 3px;
+                    width: 0;
+                    background-color: var(--bg-color);
+                    transition: all 0.2s linear;
+                }
+
             }
-            li:hover{
+            a:hover{
                 color: var(--bg-color);
                 cursor: pointer;
+            }
+            a:hover div{
+                width: 100%;
             }
         }
         .cart-box{
@@ -87,14 +106,34 @@ header{
         list-style: none;
         margin-top: 70px;
         background-color: var(--color-white);
+        
+        a{
+            text-decoration: none;
+        }
 
         p{
+            color: #000;
             padding: 10px;
         }
         p:hover{
             background-color: var(--bg-color);
             cursor: pointer;
         }
+    }
+}
+.nav-animation{
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation: nav-animation 0.4s linear;
+}
+
+@keyframes nav-animation {
+    from{
+        transform: translateY(-70px);
+    }
+    to{
+        transform: translateY(0);
     }
 }
 @media screen and (min-width:1070px){

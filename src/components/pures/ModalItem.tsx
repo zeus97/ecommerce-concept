@@ -36,17 +36,20 @@ function ModalItem({id,price,category,img,title,description,closeModal,modal}:Pr
   return (
     <div className='item-modal-c'>
         <div className='item-modal row'>
-            <div className='col-6 item-modal-column d-flex justify-content-center align-items-center'
-            style={{borderRight: '2px solid #b8b8b8'}}>
+            <div className='col-sm-12 col-md-6 item-modal-column d-flex justify-content-center align-items-center'>
+            <i className="bi bi-x item-modal-x-1" onClick={closeModal}></i>
                 <img src={img} alt={title} />
             </div>
-            <div className='col-6 item-modal-column p-3 d-flex flex-column justify-content-center align-items-center'>
-                <i className="bi bi-x" onClick={closeModal}></i>
-                <p className='item-modal-title'>{title}</p>
-                <p className='item-modal-description'>{description}</p>
+            <div className='col-sm-12 col-md-6 item-modal-column p-3 d-flex flex-column justify-content-center align-items-center'>
+                <i className="bi bi-x item-modal-x-2" onClick={closeModal}></i>
+                <div className=' item-modal-info d-flex flex-column justify-content-center align-items-center'>
+                    <p className='item-modal-title'>{title}</p>
+                    <p className='item-modal-description'>{description}</p>
+                </div>
                 <button type='button'
-                 className='btn btn-primary'
-                 onClick={addItemCart}>Add to cart</button>
+                className='btn btn-primary mt-2'
+                onClick={addItemCart}>Add to cart</button>
+
             </div>
 
         </div>
