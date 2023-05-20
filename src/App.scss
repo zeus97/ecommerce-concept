@@ -2,3 +2,21 @@
     background-color: var(--bg-color);
     min-height: 100vh;
 }
+
+.subscribe{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.subscribe:hover{
+    background-color: transparent;
+    color: #000;
+    border: 1px solid #000;
+}

@@ -1,5 +1,6 @@
 import React, {useState, useEffect } from 'react';
 import '../../styles/Navbar.scss';
+import logo from '../../images/logo.png';
 import { useNavigate } from 'react-router-dom'
 //Redux
 import { useSelector } from 'react-redux'
@@ -34,7 +35,7 @@ export default function NavBar() {
   return (
     <header className={scrollNav ? 'nav-animation' : undefined}>
         <nav>
-            <a href='#home' className='nav-title'><h1 onClick={()=>{navigate('/')}}>E-commerce</h1></a>
+            <a href='#home' className='nav-title'><img src={logo} alt='logo' onClick={()=>{navigate('/')}} /></a>
             <ul className='nav-list'>
                 <a href='#home'><li onClick={()=>{navigate('/electronics')}}>electronics <div ></div></li></a>
                 <a href='#home'><li onClick={()=>{navigate('/jewelery')}}>jewelery <div ></div></li></a>

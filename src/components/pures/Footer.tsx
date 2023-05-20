@@ -10,9 +10,9 @@ export default function Footer() {
     <footer className='mt-2'>
         <p>Copyright &copy; {year}  All rights reserved.</p>
         <div>
-            <i className="bi bi-facebook"></i>
-            <i className="bi bi-instagram"></i>
-            <i className="bi bi-twitter"></i>
+            <i className="bi bi-facebook" title='Facebook'></i>
+            <i className="bi bi-instagram" title='Instagram'></i>
+            <i className="bi bi-twitter" title='Twitter'></i>
         </div>
     </footer>
   )

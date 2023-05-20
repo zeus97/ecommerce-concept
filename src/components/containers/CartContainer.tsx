@@ -35,7 +35,7 @@ export default function CartContainer() {
         <div className='row cart-container'>
             <div className='col-md-6 col-sm-12 cart-items'>
             {cartItems.length < 1 ?
-            <h2>You don't have items on the cart</h2>
+            <h2 className='mt-3'>You don't have items on the cart</h2>
             :
                 cartItems.map((p)=>{
                     return (

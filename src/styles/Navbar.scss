@@ -13,13 +13,14 @@ header{
 
         .nav-title{
             text-decoration: none;
-            color: #000;
             text-align: center;
-            font-size: 2.5rem;
             align-self: center;
             cursor: pointer;
             flex:1;
             user-select: none;
+            img{
+                height: 65px;
+            }
         }
         ul{
             display: flex;
@@ -148,10 +149,7 @@ header{
     }
     header{
         nav{
-            h1{
-                text-align: start;
-                margin-left: 20px;
-            }
+            
             .cart-box{
                 justify-content: flex-end;
                 .burger{
@@ -169,22 +167,13 @@ header{
 
 }
 
-@media screen and (max-width:768px){
-    header{
-        nav{
-            h1{
-                font-size: 1.8rem;
-            }
-        }
-
-        }
-}
-
 @media screen and (max-width:400px){
     header{
         nav{
-            h1{
-                font-size: 1rem;
+            .nav-title{
+                img{
+                    width: 80%;
+                }
             }
         }
 

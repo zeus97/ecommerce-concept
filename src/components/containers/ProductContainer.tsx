@@ -50,14 +50,17 @@ const closeModalItem = ()=>{
 }
 
 useEffect(()=>{
-    console.log(location.pathname);
     if (location.pathname == '/'){
         getAllProducts()
-        .then((res)=>{dispatch(setProducts(res.data))})
+        .then((res)=>{
+            dispatch(setProducts([]));
+            setTimeout(()=>{dispatch(setProducts(res.data))},300) })
         .catch((error)=>{console.log(error)})
     } else {
         getCategory(location.pathname)
-        .then((res)=>{dispatch(setProducts(res.data))})
+        .then((res)=>{
+            dispatch(setProducts([]));
+            setTimeout(()=>{dispatch(setProducts(res.data))},300)})
         .catch((error)=>{console.log(error)})
     } 
 
@@ -68,7 +71,9 @@ useEffect(()=>{
     <>
         <div className='container product-container'>
             { products.length < 1 ?
-            <h1>Not products found.</h1>
+            <div className="spinner-border align-self-center" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>
             :
                 products.map((p,i)=>{
                     return (
