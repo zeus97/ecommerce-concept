@@ -35,7 +35,9 @@ export default function NavBar() {
   return (
     <header className={scrollNav ? 'nav-animation' : undefined}>
         <nav>
-            <a href='#home' className='nav-title'><img src={logo} alt='logo' onClick={()=>{navigate('/')}} /></a>
+            <a href='#home' className='nav-title'>
+                <img src={logo} alt='logo' onClick={()=>{navigate('/')}} />      
+            </a>
             <ul className='nav-list'>
                 <a href='#home'><li onClick={()=>{navigate('/electronics')}}>electronics <div ></div></li></a>
                 <a href='#home'><li onClick={()=>{navigate('/jewelery')}}>jewelery <div ></div></li></a>

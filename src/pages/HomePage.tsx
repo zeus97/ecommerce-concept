@@ -23,6 +23,7 @@ export default function HomePage() {
   return (
     <>
         <NavBar />
+        <div id='home'></div>
         <Carousel />
         <ProductContainer />
         <Footer />
