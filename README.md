@@ -56,7 +56,7 @@ Start the server
 
 ## Demo
 
-https://xxxxxx
+https://tercoshop.netlify.app
 
 
 ## Authors
