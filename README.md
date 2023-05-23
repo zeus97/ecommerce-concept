@@ -1,7 +1,7 @@
 
 # E-commerce Page
 
-An e-commerce page created with React, Redux and Bootstrap using the fake store API.
+An e-commerce page created with React, Redux and Bootstrap using the fake store API (https://fakestoreapi.com/).
 
 
 ## Technologies Used
