@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import '../../styles/SubscribeForm.scss'
 import image from '../../images/image4.jpg'
-
-interface Iemail{
-    email:string
-}
+//Interface
+import { IForm } from '../../interfaces/index'
 
 interface Props {
     closeForm: ()=> void,
@@ -13,8 +11,12 @@ interface Props {
 
 function SubscribeForm({closeForm,animation}:Props) {
 
+    const initialValues:IForm = {
+        email:''
+    };
 
-    const [data, setData] = useState<Iemail>({email:''});
+
+    const [data, setData] = useState<IForm>(initialValues);
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>)=>{
         e.preventDefault();

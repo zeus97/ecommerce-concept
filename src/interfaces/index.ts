@@ -10,3 +10,7 @@ export interface IProduct {
 export interface ICart extends IProduct {
     quantity:number
 };
+
+export interface IForm {
+    email:string
+};

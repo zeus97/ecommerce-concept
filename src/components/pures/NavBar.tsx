@@ -45,8 +45,7 @@ export default function NavBar() {
                 <a href='#home'><li onClick={()=>{navigate('/womens-clothing')}}>women's clothing <div ></div></li></a>
             </ul>
             <div className='cart-box'>
-            <i className="bi bi-list burger"
-            onClick={handleMenu}></i>
+            <i className="bi bi-list burger" onClick={handleMenu}></i>
                 <i className="bi bi-cart" onClick={()=>{navigate('/cart')}}>
                     <div className='cart-counter'>{cartCount}</div>
                 </i>

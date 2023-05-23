@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import '../../styles/Product.scss'
-
 //Redux
 import { useDispatch } from 'react-redux'
 import { addItem } from '../../features/cart/cartSlice'
+//Interface
+import { ICart } from '../../interfaces'
 
 
 
@@ -23,12 +24,12 @@ export default function Product({id,image,title,price,description,category, moda
     
     const [disabledButton, setDisabledButton] = useState(false)
 
-
+    
     if(description.length > 500){
         description = '';
     };
 
-    const item = {
+    const item: ICart = {
         id:id,
         image:image,
         title:title,

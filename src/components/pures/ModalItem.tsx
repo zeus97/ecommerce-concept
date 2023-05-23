@@ -3,6 +3,8 @@ import '../../styles/ModalItem.scss'
 //Redux
 import { useDispatch } from 'react-redux'
 import { addItem } from '../../features/cart/cartSlice'
+//Interface
+import { ICart } from '../../interfaces'
 
 interface Props{
     id:number,
@@ -19,7 +21,7 @@ function ModalItem({id,price,category,img,title,description,closeModal,modal}:Pr
 
     const dispatch = useDispatch();
 
-    const item = {
+    const item: ICart = {
         id:id,
         image:img,
         title:title,
