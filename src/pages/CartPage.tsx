@@ -1,4 +1,3 @@
-import React from 'react'
 //Components
 import NavBar from '../components/pures/NavBar'
 import CartContainer from '../components/containers/CartContainer'

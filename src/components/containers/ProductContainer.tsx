@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import { useState,useEffect } from 'react'
 import '../../styles/ProductContainer.scss'
 //get the URL by location hook
 import { useLocation } from 'react-router-dom'

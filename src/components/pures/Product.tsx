@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import '../../styles/Product.scss'
 //Redux
 import { useDispatch } from 'react-redux'

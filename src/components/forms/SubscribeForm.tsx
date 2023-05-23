@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState } from 'react'
 import '../../styles/SubscribeForm.scss'
 import image from '../../images/image4.jpg'
 //Interface

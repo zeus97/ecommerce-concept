@@ -1,4 +1,3 @@
-import React from 'react'
 import '../../styles/CartItem.scss'
 //Redux
 import { useDispatch } from 'react-redux'
