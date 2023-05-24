@@ -66,6 +66,12 @@
       .cart-item{
 
             .cart-info-c{
+                .cart-title{
+                    font-size: 0.8rem;
+                }
+                .cart-price{
+                    font-size: 1.2rem;
+                }
 
                 .cart-btn-c{
                     flex-direction: column;
@@ -74,6 +80,9 @@
                     .cart-btn-quantity{
                         margin-bottom: 10px;
                     }
+                    .remove-btn{
+                        font-size: 0.8rem;
+                    }
                 }
             }
 
@@ -81,13 +90,56 @@
 
 }
 
-@media screen and (max-width:478px){
+@media screen and (max-width:767px){
     .cart-item{
-        
+        width: 80%;
+        min-height: 200px;
 
+        .cart-img{
+            width: 30%;
+            height: 35%;
+            border-radius: 5px;
+        }
         .cart-info-c{
             .cart-title{
+                font-size: 0.8rem;
                 overflow: auto;
+            }
+            .cart-price{
+                font-size: 1.2rem;
+            }
+            .cart-btn-c{
+                flex-direction: row;
+                align-items: center;
+
+                .cart-btn-quantity{
+                    margin-bottom: 10px;
+                }
+                .remove-btn{
+                    font-size: 0.8rem;
+                }
+            }
+        }
+}
+}
+
+@media screen and (max-width:576px){
+    .cart-item{
+        width: 95%;
+        min-height: 220px;
+
+        .cart-img{
+            width: 30%;
+            height: 35%;
+            border-radius: 5px;
+        }
+        .cart-info-c{
+            .cart-title{
+                font-size: 0.8rem;
+                overflow: auto;
+            }
+            .cart-price{
+                font-size: 1.2rem;
             }
             .cart-btn-c{
                 flex-direction: column;
@@ -96,7 +148,10 @@
                 .cart-btn-quantity{
                     margin-bottom: 10px;
                 }
+                .remove-btn{
+                    font-size: 0.8rem;
+                }
             }
         }
-}
+} 
 }

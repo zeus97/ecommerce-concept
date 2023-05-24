@@ -10,15 +10,15 @@ function Carousel() {
     <div id="carousel-example" className="carousel slide container-md mt-2" data-bs-ride="carousel">
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src={image1} className="d-block w-100" alt="shoes" height='300' />
+          <img src={image1} className="d-block w-100 carousel-img" alt="shoes"  />
         </div>
 
         <div className="carousel-item">
-          <img src={image2} className="d-block w-100" alt="shirt" height='300' />
+          <img src={image2} className="d-block w-100 carousel-img" alt="shirt"  />
         </div>
 
         <div className="carousel-item">
-          <img src={image3} className="d-block w-100" alt="asda" height='300'/>
+          <img src={image3} className="d-block w-100 carousel-img" alt="asda" />
         </div>
       </div>
       <button className="carousel-control-prev" type="button" data-bs-target="#carousel-example" data-bs-slide="prev">

@@ -35,7 +35,7 @@ export default function CartItem({id,image,title,price,quantity}:Props) {
                   style={{border:'1px solid #000'}} >-</button>
               </div>
               <button type='button' 
-              className='btn btn-danger' 
+              className='btn btn-danger remove-btn' 
               onClick={()=> dispatch(removeItem(id))}>Remove</button>
           </div>
           <p className='cart-price'>{`$${price}`}</p>

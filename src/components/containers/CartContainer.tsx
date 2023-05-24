@@ -57,7 +57,9 @@ export default function CartContainer() {
                     :
                     cartItems.map((p)=>{
                         return (
-                            <div key={p.id} style={{borderBottom : '1px solid #000'}}>
+                            <div key={p.id}
+                            className='cart-info-text'
+                            style={{borderBottom : '1px solid #000'}}>
                                 <p>{p.quantity + 'x' + ' ' + p.title}</p>
                             </div>
                         )

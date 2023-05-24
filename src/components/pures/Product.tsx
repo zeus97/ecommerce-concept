@@ -58,7 +58,7 @@ export default function Product({id,image,title,price,description,category, moda
         <div className='product-modal'>
             <div className='product-btn-c'>
                 <button type='button'
-                 className='btn btn-secondary'
+                 className='btn btn-secondary product-button'
                  onClick={()=>{itemModal(id,price,category,image,title,description)}}>Quick View
                  </button>
                 {disabledButton ?

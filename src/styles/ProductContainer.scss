@@ -49,3 +49,9 @@
         opacity: 1;
     }
 }
+
+@media screen and (max-width:767px){
+    .product-container{
+        padding: 8px;
+    }
+}
