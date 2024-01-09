@@ -6,6 +6,8 @@ import HomePage from './pages/HomePage'
 import NotFoundPage from './pages/NotFoundPage'
 import CartPage from './pages/CartPage'
 
+import BottomNav from './components/pures/BottomNav'
+
 
 function App() {
 
@@ -21,7 +23,9 @@ function App() {
           <Route path='/cart' element={<CartPage />} />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
+        <BottomNav />
       </BrowserRouter>
+      
     </div>
   )
 }

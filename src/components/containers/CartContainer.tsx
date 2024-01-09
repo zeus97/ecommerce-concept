@@ -35,7 +35,7 @@ export default function CartContainer() {
         <div className='row cart-container'>
             <div className='col-md-6 col-sm-12 cart-items'>
             {cartItems.length < 1 ?
-            <h2 className='mt-3'>You don't have items on the cart</h2>
+            <h2 className='mt-3'>You don't have items in the cart</h2>
             :
                 cartItems.map((p)=>{
                     return (
@@ -68,7 +68,12 @@ export default function CartContainer() {
                 {total.length > 0 &&
                  <div className='total-c'>
                     <h2 className='text-center'>Total: ${total}</h2>
-                    <button type='button' className='btn btn-warning'>Checkout</button>
+                    <button
+                    type='button'
+                    className='btn btn-warning'
+                    onClick={()=>{alert("Thanks for your purchase!")}}>
+                        Checkout
+                    </button>
                 </div>}
             </div>
         </div>

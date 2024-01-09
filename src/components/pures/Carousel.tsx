@@ -7,7 +7,7 @@ import image3 from '../../images/image3.jpg'
 
 function Carousel() {
   return (
-    <div id="carousel-example" className="carousel slide container-md mt-2" data-bs-ride="carousel">
+    <div id="carousel-example" className="carousel slide container-md mt-2" data-bs-ride="carousel" data-bs-theme="dark" data-bs-touch="true">
       <div className="carousel-inner">
         <div className="carousel-item active">
           <img src={image1} className="d-block w-100 carousel-img" alt="shoes"  />

@@ -1,6 +1,7 @@
 footer{
     width: 100%;
-    height: 100px;
+    
+    padding-bottom: 90px;
     background-color: var(--color-white);
     color: #000;
 
@@ -13,8 +14,9 @@ footer{
         font-size: 25px;
 
         i{
-            margin-right: 10px;
+            margin-right: 15px;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
         i:hover{
             color: var(--bg-color);

@@ -13,6 +13,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setProducts } from '../../features/product/productSlice'
 //Interface
 import { IProduct } from '../../interfaces';
+import Skeleton from '../pures/Skeleton';
 
 
 function ProductContainer() {
@@ -22,14 +23,15 @@ const dispatch = useDispatch()
 
 const [modal, setModal] = useState<boolean>(false);
 const [modalItem, setModalItem] = useState<boolean>(false);
-const [modalInfo, setModalInfo] = useState<IProduct>({id:0,title:'',price:0,category:'',description:'',image:''})
+const [modalInfo, setModalInfo] = useState<IProduct>({id:0,title:'',price:0,category:'',description:'',image:''});
+const [isLoading, setIsLoading] = useState<boolean>(false);
 
 let location = useLocation();
 
 //Modal function
 const hanldeModal = ()=>{
     setModal(true);
-}
+};
 
 //Modal Item functions
 const handleModalItem = (id:number,price:number,category:string,img:string,title:string,description:string) =>{
@@ -47,34 +49,32 @@ const handleModalItem = (id:number,price:number,category:string,img:string,title
 
 const closeModalItem = ()=>{
     setModalItem(false);
-}
+};
 
 useEffect(()=>{
     if (location.pathname == '/'){
+        setIsLoading(true);
         getAllProducts()
-        .then((res)=>{
-            dispatch(setProducts([]));
-            setTimeout(()=>{dispatch(setProducts(res.data))},300) })
+        .then((res)=>{dispatch(setProducts(res.data));})
         .catch((error)=>{console.log(error)})
+        .finally(()=>{setIsLoading(false)})
     } else {
+        setIsLoading(true);
         getCategory(location.pathname)
-        .then((res)=>{
-            dispatch(setProducts([]));
-            setTimeout(()=>{dispatch(setProducts(res.data))},300)})
+        .then((res)=>{dispatch(setProducts(res.data));})
         .catch((error)=>{console.log(error)})
+        .finally(()=>{setIsLoading(false)})
     } 
 
     
-},[location.pathname])
+},[location.pathname]);
+
+    if(products.length < 1 || isLoading){return <Skeleton />}
 
   return (
     <>
         <div className='container product-container'>
-            { products.length < 1 ?
-            <div className="spinner-border align-self-center" role="status">
-                <span className="visually-hidden">Loading...</span>
-            </div>
-            :
+            {
                 products.map((p,i)=>{
                     return (
                         

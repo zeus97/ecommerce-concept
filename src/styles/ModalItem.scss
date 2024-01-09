@@ -25,6 +25,7 @@
                 width: 50%;
                 height: 50%;
                 border-radius: 5px;
+                mix-blend-mode: multiply;
             }
 
             i{
@@ -90,6 +91,7 @@
         .item-modal{
             height: 90%;
             width: 80%;
+            margin-bottom: 70px;
             .item-modal-column{
                 height: 50%;
                 .item-modal-info{

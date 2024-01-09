@@ -3,6 +3,12 @@
     min-height: 100vh;
 }
 
+.home-page, .cart-section{
+    margin-top: 70px;
+    padding-top: 20px;
+}
+
+
 .subscribe{
     position: fixed;
     bottom: 0;
@@ -11,9 +17,13 @@
     color: #fff;
     padding: 4px 8px;
     border-radius: 5px;
-    margin-left: 20px;
+    margin-left: 10px;
     margin-bottom: 5px;
     cursor: pointer;
+
+    @media screen and (max-width:767px){
+        bottom: 70px;
+    }
 }
 .subscribe:hover{
     background-color: transparent;
@@ -21,8 +31,3 @@
     border: 1px solid #000;
 }
 
-#home{
-    position: absolute;
-    top: 0;
-    left: 0;
-}

@@ -90,12 +90,14 @@
         .form-c{
             width: 400px;
             height: 95%;
+            border-radius: 10px;
             flex-direction: column-reverse;
 
             img{
-                
                 height: 50%;
                 align-self: center;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
             }
             div{
                 h2{

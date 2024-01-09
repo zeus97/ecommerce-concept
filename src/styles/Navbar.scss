@@ -1,4 +1,7 @@
 header{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 70px;
     background-color: var(--color-white);
@@ -42,18 +45,27 @@ header{
                 height: 100%;
                 flex: 1;
                 
-                user-select: none;
+                
                 div{
                     height: 3px;
                     width: 0;
                     background-color: var(--bg-color);
-                    transition: all 0.2s linear;
+                    transition: all 0.3s ease;
+                }
+                div.act-b{
+                    width: 100%;
                 }
 
-            }
-            a:hover{
-                color: var(--bg-color);
-                cursor: pointer;
+                li:hover{
+                    color: var(--bg-color);
+                    cursor: pointer;
+
+                }
+
+                li.active-link{
+                    color: var(--bg-color);
+                }
+
             }
             a:hover div{
                 width: 100%;

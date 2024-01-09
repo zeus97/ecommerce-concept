@@ -52,8 +52,10 @@ export default function Product({id,image,title,price,description,category, moda
   return (
     <div className='product'>
         <img className='product-img' src={image} alt={title}/>
-        <p className='product-title'>{title}</p>
-        <p className='product-price'>{`$${price}`}</p>
+        <div className='product-info-c'>
+            <p className='product-title'>{title}</p>
+            <p className='product-price'>{`$${price}`}</p>
+        </div>
 
         <div className='product-modal'>
             <div className='product-btn-c'>
